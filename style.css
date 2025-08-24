@@ -1,0 +1,352 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #2e3239; /* Dark Neumorphic base background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    min-height: 100vh; /* Ensure it covers at least the full viewport height */
+    padding: 30px 20px; /* Add padding for content not to stick to edges */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    color: #e0e0e0; /* Default text color for dark mode */
+}
+
+.container {
+    background: #2e3239;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px #202327, -8px -8px 16px #3c414b; /* Main neumorphic shadow for dark mode */
+    width: 95%; /* Responsive width */
+    max-width: 1200px; /* Max width for large screens */
+    margin: 0 auto; /* Center the container */
+    display: block; /* Allows content to flow naturally */
+}
+
+.resume-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    gap: 30px; /* Space between columns */
+}
+
+.left-column, .right-column {
+    background: #2e3239; /* Inherit from container, or give slight inset if desired */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 3px 3px 7px #202327, inset -3px -3px 7px #3c414b; /* Soft inset shadow for columns in dark mode */
+}
+
+.left-column {
+    flex: 1; /* Allows left column to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 350px; /* Max width for the left column */
+}
+
+.right-column {
+    flex: 2; /* Allows right column to grow more */
+    min-width: 400px; /* Minimum width before wrapping */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+    .left-column, .right-column {
+        min-width: unset; /* Remove min-width to allow full width */
+        max-width: 100%; /* Take full width */
+    }
+    .container {
+        padding: 20px;
+    }
+}
+
+
+/* --- Existing and Adapted Styles for Content --- */
+
+/* Profile Picture */
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 5px solid #2e3239; /* Matches background for a seamless look in dark mode */
+    box-shadow: 6px 6px 12px #202327, -6px -6px 12px #3c414b; /* Neumorphic shadow for image in dark mode */
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.03); /* Subtle hover effect */
+}
+
+/* Neumorphic Heading Style */
+h3.neumorphic-heading,
+.neumorphic-heading {
+    background: #2e3239;
+    border-radius: 10px; /* Softer rounded corners */
+    box-shadow: 6px 6px 10px #202327, -6px -6px 10px #3c414b; /* Outset shadow for button-like effect in dark mode */
+    padding: 8px 15px; /* Padding inside the "button" */
+    display: inline-block; /* Essential to make padding/width apply correctly */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #e0e0e0; /* Text color for dark mode headings */
+    font-weight: 600; /* Keep bold */
+    text-align: center; /* Center text within the button */
+    border-bottom: none !important; /* Override any existing border-bottom */
+    padding-bottom: 8px !important; /* Override specific padding-bottom */
+    width: fit-content; /* Make the background only as wide as the text */
+    margin-left: auto; /* For centering block elements */
+    margin-right: auto; /* For centering block elements */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+/* Headers and Titles - Adjusted for .neumorphic-heading */
+h1 {
+    font-size: 2.8em; /* Default large font for H1 */
+    margin-bottom: 5px; /* Default margin for H1 */
+    text-align: left; /* Ensure the H1 itself doesn't force center alignment if the span is inline-block */
+    color: #f0f0f0; /* Dark mode color for H1 */
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #cccccc; /* Dark mode color for H2 */
+    margin-bottom: 20px;
+    text-align: left; /* Ensure H2 remains left-aligned */
+}
+
+/* Specific adjustment for h2 when it has the neumorphic-heading class */
+h2.neumorphic-heading {
+    font-size: 1.3em; /* Slightly smaller font size for the button-like H2 */
+    margin-top: 5px; /* Adjust spacing above the button H2 */
+    margin-bottom: 20px; /* Ensure space below the button H2 */
+    line-height: 1.2; /* Adjust line height for better button text centering */
+    display: inline-block; /* Ensure it behaves like a button */
+    text-align: left; /* Align within its container, or remove if you want it centered */
+    margin-left: 0; /* Remove auto margins to keep it left-aligned */
+    margin-right: auto;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #e0e0e0; /* Dark mode color for H3 */
+}
+
+h4 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #f0f0f0; /* Dark mode color for H4 */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #3c414b; /* Dark mode border */
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: normal;
+    color: #cccccc; /* Dark mode color for H5 */
+    margin-bottom: 5px;
+}
+
+/* General Paragraph and List Styling */
+p, ul {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #e0e0e0; /* Dark mode color for paragraphs and lists */
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Default Links */
+a {
+    color: #8ab4f8; /* Lighter blue for links in dark mode */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a7c9f5; /* Even lighter blue on hover in dark mode */
+    text-decoration: underline;
+}
+
+/* Default Font Awesome Icons */
+.fas, .fab {
+    color: #cccccc; /* Icon color in dark mode */
+    font-size: 1em;
+}
+
+/* Styles for the Neumorphic Icon Holders */
+.neumorphic-icon-holder {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: #2e3239;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px #202327, -6px -6px 10px #3c414b; /* Dark neumorphic shadow for icon holder */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+/* Style for icons INSIDE the new holder */
+.neumorphic-icon-holder i {
+    color: #cccccc; /* Icon color in dark mode */
+    font-size: 1.1em;
+    margin-right: 0;
+}
+
+/* Hover effect for the icon holder */
+.neumorphic-icon-holder:hover {
+    box-shadow: inset 2px 2px 5px #202327, inset -2px -2px 5px #3c414b; /* Inset shadow on hover for dark mode */
+    background: #363a41; /* Slightly lighter dark background on hover */
+}
+
+/* Specific Section Styling */
+.contact-info,
+.about-section,
+.education-section,
+.skills-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #3c414b; /* Dark mode dashed border */
+}
+
+.additional-info-section {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.skills-subheading {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #e0e0e0; /* Dark mode color */
+    border-bottom: 1px solid #3c414b; /* Dark mode border */
+    padding-bottom: 5px;
+}
+
+.soft-skills {
+    font-style: italic;
+    color: #cccccc; /* Dark mode color */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #3c414b; /* Dark mode border */
+}
+
+.header-text {
+    flex-grow: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+/* Ensure H1 in main-header is regular */
+.main-header h1 {
+    font-size: 2.8em;
+    margin-bottom: 0;
+    text-align: left; /* Keep it left-aligned */
+    color: #f0f0f0; /* Dark mode color */
+}
+
+/* Ensure H2 in main-header, when it has the neumorphic-heading class, aligns and styles correctly */
+.main-header h2.neumorphic-heading {
+    text-align: left; /* Align button H2 to the left */
+    width: fit-content; /* Make the background only as wide as the text */
+    margin-left: 0; /* Remove auto margins to keep it left-aligned */
+    margin-right: auto;
+    display: inline-block; /* Ensure it behaves like a button */
+}
+
+
+.robot-animation {
+    flex-shrink: 0;
+    background: #2e3239;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: inset 3px 3px 7px #202327, inset -3px -3px 7px #3c414b; /* Dark inset shadow for robot animation container */
+}
+
+.job, .certification-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #3c414b; /* Dark mode dashed border */
+}
+
+.job:last-child, .certification-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.job-meta {
+    font-size: 0.9em;
+    color: #b0b0b0; /* Dark mode color */
+    margin-bottom: 5px;
+}
+
+.job-date {
+    font-weight: bold;
+    color: #cccccc; /* Dark mode color */
+}
+
+.recommendation-link {
+    margin-top: 10px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.recommendation-link a {
+    color: #e0e0e0; /* Dark mode link color */
+    text-decoration: none;
+    font-weight: 500;
+}
+.recommendation-link a:hover {
+    color: #8ab4f8; /* Dark mode hover color */
+    text-decoration: underline;
+}
+
+.cert-issuer {
+    font-size: 0.9em;
+    color: #b0b0b0; /* Dark mode color */
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.cert-desc {
+    font-size: 0.95em;
+    color: #e0e0e0; /* Dark mode color */
+}
