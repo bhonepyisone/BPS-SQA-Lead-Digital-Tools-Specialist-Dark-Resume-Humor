@@ -364,8 +364,8 @@ a:hover {
 /* Blur Overlay Styles */
 .blur-overlay {
     position: fixed;
-    bottom: -8;
-    left: -5;
+    bottom: -1;
+    left: 0;
     width: 70%;
     height: 70%;
     background: rgba(46, 50, 57, 0.85);
