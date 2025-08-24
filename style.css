@@ -357,74 +357,123 @@ a:hover {
     color: #e0e0e0; /* Dark mode color */
 }
 
-/* --- New Styles for Overlay and Blur Layer --- */
+/* Existing CSS code remains the same until the end */
 
-/* This will be the semi-transparent black overlay that covers the page */
-.overlay {
+/* Add these new styles at the end of the file */
+
+/* Blur Overlay Styles */
+.blur-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.8); /* A bit darker for readability */
-    backdrop-filter: blur(10px); /* This applies a blur effect behind the overlay content */
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 50, 57, 0.85);
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* A high z-index to be on top */
+    z-index: 1000;
+    pointer-events: auto;
 }
 
-/* This container holds the "Hire Me" text and buttons */
 .overlay-content {
-    text-align: center;
-    color: #e0e0e0;
+    background: #2e3239;
     padding: 30px;
     border-radius: 20px;
-    background: #2e3239; /* Same as your main background */
-    box-shadow: 10px 10px 20px #202327, -10px -10px 20px #3c414b; /* Outset neumorphic shadow */
-    z-index: 1000;
+    box-shadow: 8px 8px 16px #202327, -8px -8px 16px #3c414b,
+                inset 3px 3px 7px #202327, inset -3px -3px 7px #3c414b;
+    width: 66.67%; /* 4/6 of the parent container */
+    max-width: 700px;
+    text-align: center;
 }
 
-/* Row for each contact and its unlock button */
-.contact-row {
+.unlock-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-unlock-list {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-unlock-item {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* Space out the text and button */
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 10px;
-    box-shadow: inset 3px 3px 6px #202327, inset -3px -3px 6px #3c414b; /* Inset neumorphic shadow */
-    font-size: 1.1em;
-}
-
-.contact-row p {
-    margin: 0;
-    padding-right: 20px;
-}
-
-.contact-row a {
-    color: #e0e0e0;
-}
-
-.contact-row a:hover {
-    color: #8ab4f8;
-}
-
-/* Style for the 'Unlock' button */
-.unlock-btn {
+    padding: 12px 20px;
     background: #2e3239;
-    color: #e0e0e0;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 0.9em;
-    cursor: pointer;
-    box-shadow: 6px 6px 12px #202327, -6px -6px 12px #3c414b; /* Neumorphic outset shadow */
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px #202327, -4px -4px 8px #3c414b;
     transition: all 0.3s ease;
 }
 
+.contact-unlock-item:hover {
+    box-shadow: inset 2px 2px 5px #202327, inset -2px -2px 5px #3c414b;
+}
+
+.contact-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.contact-type i {
+    color: #8ab4f8;
+    font-size: 1.2em;
+}
+
+.unlock-btn {
+    background: #2e3239;
+    color: #8ab4f8;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #202327, -4px -4px 8px #3c414b;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
 .unlock-btn:hover {
-    box-shadow: inset 2px 2px 5px #202327, inset -2px -2px 5px #3c414b; /* Neumorphic inset on hover */
-    background: #363a41;
-    color: #8ab4f8; /* Highlight text on hover */
+    box-shadow: inset 2px 2px 5px #202327, inset -2px -2px 5px #3c414b;
+    color: #a7c9f5;
+    text-decoration: none;
+}
+
+.location-btn {
+    cursor: default;
+    color: #cccccc;
+}
+
+.location-btn:hover {
+    box-shadow: 4px 4px 8px #202327, -4px -4px 8px #3c414b;
+    color: #cccccc;
+}
+
+/* Responsive adjustments for the overlay */
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .unlock-text {
+        font-size: 1.4em;
+    }
+    
+    .contact-unlock-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
