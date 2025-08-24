@@ -364,12 +364,12 @@ a:hover {
 /* Blur Overlay Styles */
 .blur-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -5;
+    left: -5;
     width: 50%;
     height: 50%;
     background: rgba(46, 50, 57, 0.85);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
