@@ -10,26 +10,34 @@
 </head>
 <body>
 
-    <div class="overlay">
+    <!-- Blur Overlay -->
+    <div class="blur-overlay" id="blurOverlay">
         <div class="overlay-content">
-            <h1><b>Hire me to unlock my full potential.</b></h1>
-            <div class="contact-row">
-                <p>Email: <a href="mailto:bhone.ps@proton.me">bhone.ps@proton.me</a></p>
-                <button class="unlock-btn">Unlock</button>
-            </div>
-            <div class="contact-row">
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/bhone-pyae-sone-bps93/" target="_blank">linkedin.com/in/bhone-pyae-sone</a></p>
-                <button class="unlock-btn">Unlock</button>
-            </div>
-            <div class="contact-row">
-                <p>Phone: <a href="tel:+66970692084">+66-97-069-2084</a></p>
-                <button class="unlock-btn">Unlock</button>
+            <h2 class="unlock-text">Hire me to unlock my full potential.</h2>
+            
+            <div class="contact-unlock-list">
+                <div class="contact-unlock-item">
+                    <span class="contact-type"><i class="fas fa-phone"></i> Phone</span>
+                    <a href="tel:+66970692084" class="unlock-btn">Unlock</a>
+                </div>
+                <div class="contact-unlock-item">
+                    <span class="contact-type"><i class="fas fa-envelope"></i> Email</span>
+                    <a href="mailto:bhone.ps@proton.me" class="unlock-btn">Unlock</a>
+                </div>
+                <div class="contact-unlock-item">
+                    <span class="contact-type"><i class="fab fa-linkedin"></i> LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/bhone-pyae-sone-bps93/" target="_blank" class="unlock-btn">Unlock</a>
+                </div>
+                <div class="contact-unlock-item">
+                    <span class="contact-type"><i class="fas fa-map-marker-alt"></i> Location</span>
+                    <span class="unlock-btn location-btn">Ramkhamhaeng, Bangkok</span>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="main-content">
-        <div class="container"> <main class="resume-container">
+
+    <div class="container"> 
+        <main class="resume-container">
             <section class="left-column">
                 
                 <div class="profile-pic-container">
@@ -83,7 +91,9 @@
             <section class="right-column">
                 <header class="main-header">
                     <div class="header-text">
-                        <h1>Bhone Pyi Sone</h1> <h2 class="neumorphic-heading">SQA Lead & Digital Tool Specialist</h2> </div>
+                        <h1>Bhone Pyi Sone</h1> 
+                        <h2 class="neumorphic-heading">SQA Lead & Digital Tool Specialist</h2> 
+                    </div>
                     <div class="robot-animation">
                         <lottie-player src="robot.json" background="transparent" speed="1" style="width: 120px; height: 120px;" loop autoplay></lottie-player>
                     </div>
@@ -156,27 +166,20 @@
                         <p class="cert-desc">Covers core concepts and applications of Artificial Intelligence (AI) in generative tasks.</p>
                     </div>
                     <div class="certification-item">
-                        <h4><a href="https://olympus.mygreatlearning.com/courses/106320/certificate" target="_blank">Digital Marketing for Professionals</a></h4>
-                        <p class="cert-issuer">Coursera | Issued May 2024</p>
-                        <p class="cert-desc">Mastered key strategies in SEO, social media, and content marketing for professional growth.</p>
+                        <h4><a href="https://olympus.mygreatlearning.com/courses/106320/certificate" target="_blank">Another Certification</a></h4>
+                        <p class="cert-issuer">Issuer | Issued Date</p>
+                        <p class="cert-desc">Description of certification.</p>
                     </div>
                 </div>
             </section>
         </main>
-        </div>
-    </div> <script>
-        const overlay = document.querySelector('.overlay');
-        const unlockButtons = document.querySelectorAll('.unlock-btn');
+    </div>
 
-        // Add a click event listener to each button
-        unlockButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Hide the overlay
-                overlay.style.display = 'none';
-                // Unblur the main content
-                document.querySelector('.main-content').style.filter = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            });
+    <script>
+        // Keep the blur overlay visible at all times
+        document.addEventListener('DOMContentLoaded', function() {
+            // The overlay is already visible by default through CSS
+            // Add any additional JavaScript functionality if needed
         });
     </script>
 </body>
