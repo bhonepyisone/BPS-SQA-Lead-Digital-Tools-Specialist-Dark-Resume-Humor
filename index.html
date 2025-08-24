@@ -10,7 +10,26 @@
 </head>
 <body>
 
-    <div class="container"> <main class="resume-container">
+    <div class="overlay">
+        <div class="overlay-content">
+            <h1><b>Hire me to unlock my full potential.</b></h1>
+            <div class="contact-row">
+                <p>Email: <a href="mailto:bhone.ps@proton.me">bhone.ps@proton.me</a></p>
+                <button class="unlock-btn">Unlock</button>
+            </div>
+            <div class="contact-row">
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/bhone-pyae-sone-bps93/" target="_blank">linkedin.com/in/bhone-pyae-sone</a></p>
+                <button class="unlock-btn">Unlock</button>
+            </div>
+            <div class="contact-row">
+                <p>Phone: <a href="tel:+66970692084">+66-97-069-2084</a></p>
+                <button class="unlock-btn">Unlock</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="container"> <main class="resume-container">
             <section class="left-column">
                 
                 <div class="profile-pic-container">
@@ -137,4 +156,28 @@
                         <p class="cert-desc">Covers core concepts and applications of Artificial Intelligence (AI) in generative tasks.</p>
                     </div>
                     <div class="certification-item">
-                        <h4><a href="https://olympus.mygreatlearning.
+                        <h4><a href="https://olympus.mygreatlearning.com/courses/106320/certificate" target="_blank">Digital Marketing for Professionals</a></h4>
+                        <p class="cert-issuer">Coursera | Issued May 2024</p>
+                        <p class="cert-desc">Mastered key strategies in SEO, social media, and content marketing for professional growth.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        </div>
+    </div> <script>
+        const overlay = document.querySelector('.overlay');
+        const unlockButtons = document.querySelectorAll('.unlock-btn');
+
+        // Add a click event listener to each button
+        unlockButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Hide the overlay
+                overlay.style.display = 'none';
+                // Unblur the main content
+                document.querySelector('.main-content').style.filter = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+        });
+    </script>
+</body>
+</html>
